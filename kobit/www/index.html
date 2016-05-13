@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <!-- 
+    	The codes are free, but we require linking to our web site.
+    	Why to Link?
+    	A true story: one girl didn't set a link and had no decent date for two years, and another guy set a link and got a top ranking in Google! 
+    	Where to Put the Link?
+    	home, about, credits... or in a good page that you want
+    	THANK YOU MY FRIEND!
+    -->
+    <title>Chat box - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.css">
+    <!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="asset/css/animate.css">
+    <style type="text/css">
+    	
+                    
+
+ .portlet {
+    margin-bottom: 15px;
+}
+
+.btn-white {
+
+    color: #333333;
+    background-color: #ffffff;
+}
+
+.portlet {
+    /*border: 1px solid;*/
+}
+
+.portlet .portlet-heading {
+    padding: 0 15px;
+    position: fixed;
+    top:0;
+    width:100%;
+    z-index: 2;
+}
+
+.portlet .portlet-heading h4 {
+    padding: 1px 0;
+    font-size: 16px;
+}
+
+.portlet .portlet-heading a {
+    color: #fff;
+}
+
+.portlet .portlet-heading a:hover,
+.portlet .portlet-heading a:active,
+.portlet .portlet-heading a:focus {
+    outline: none;
+}
+
+.portlet .portlet-widgets .dropdown-menu a {
+    color: #333;
+}
+
+.portlet .portlet-widgets ul.dropdown-menu {
+    min-width: 0;
+}
+
+.portlet .portlet-heading .portlet-title {
+    float: left;
+}
+
+.portlet .portlet-heading .portlet-title h4 {
+    margin: 10px 0;
+}
+
+.portlet .portlet-heading .portlet-widgets {
+    float: right;
+    margin: 8px 0;
+}
+
+.portlet .portlet-heading .portlet-widgets .tabbed-portlets {
+    display: inline;
+}
+
+.portlet .portlet-heading .portlet-widgets .divider {
+    margin: 0 5px;
+}
+
+
+
+.portlet .portlet-body {
+    padding: 15px;
+    background: #fff;
+    padding-top: 70px;
+    padding-bottom: 138px;
+}
+
+.portlet .portlet-footer {
+    padding: 10px 15px;
+    background: #e0e7e8;
+    position: fixed;
+    bottom:0;
+    width:100%;
+}
+
+.portlet .portlet-footer ul {
+    margin: 0;
+}
+
+.portlet-green,
+.portlet-green>.portlet-heading {
+    border-color: #16a085;
+}
+
+.portlet-green>.portlet-heading {
+    color: #fff;
+    background-color: #16a085;
+}
+
+.portlet-orange,
+.portlet-orange>.portlet-heading {
+    border-color: #f39c12;
+}
+
+.portlet-orange>.portlet-heading {
+    color: #fff;
+    background-color: #f39c12;
+}
+
+.portlet-blue,
+.portlet-blue>.portlet-heading {
+    border-color: #2980b9;
+}
+
+.portlet-blue>.portlet-heading {
+    color: #fff;
+    background-color: #2980b9;
+}
+
+.portlet-red,
+.portlet-red>.portlet-heading {
+    border-color: #e74c3c;
+}
+
+.portlet-red>.portlet-heading {
+    color: #fff;
+    background-color: #e74c3c;
+}
+
+.portlet-purple,
+.portlet-purple>.portlet-heading {
+    border-color: #8e44ad;
+}
+
+.portlet-purple>.portlet-heading {
+    color: #fff;
+    background-color: #8e44ad;
+}
+
+.portlet-default,
+.portlet-dark-blue,
+.portlet-default>.portlet-heading,
+.portlet-dark-blue>.portlet-heading {
+    border-color: #34495e;
+}
+
+.portlet-default>.portlet-heading,
+.portlet-dark-blue>.portlet-heading {
+    color: #fff;
+    background-color: #34495e;
+}
+
+.portlet-basic,
+.portlet-basic>.portlet-heading {
+    border-color: #333;
+}
+
+.portlet-basic>.portlet-heading {
+    border-bottom: 1px solid #333;
+    color: #333;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    .portlet {
+        margin-bottom: 30px;
+    }
+}
+
+.text-green {
+    color: #16a085;
+}
+
+.text-orange {
+    color: #f39c12;
+}
+
+.text-red {
+    color: #e74c3c;
+}              
+
+#loginform{
+    background-image: url('asset/img/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}  
+body{
+    width: 100%;
+    /*overflow: hidden;*/
+}    
+    </style>
+
+</head>
+<body>
+
+    <audio id="soundFX">
+    <source src="asset/sound/bell.mp3"></source>
+    Update your browser to enjoy HTML5 audio!
+    </audio>
+
+<div id="issue" class="col-md-12 bg-warning animated fadeInDown" style="top:60px;z-index: 2; position: fixed; width:100%;">
+    <p style="padding-top: 10px; padding-bottom: 10px;" id="textissue">ini isunya</p>
+
+</div>          
+<div class=" bootstrap snippet">
+
+    <div class="row" style="z-index: 4;">
+        <div class="col-md-12 ">
+            <div class="portlet portlet-default">
+                <div class="portlet-heading">
+                    <div class="portlet-title">
+                        <h4><i class="fa fa-circle text-green"></i>KOBIT</h4>
+                    </div>
+                    <div class="portlet-widgets">
+                       <button id="btnissue"class="btn btn-primary btn-xs">Issue</button>
+                        <span class="divider"></span>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#chat"><i class="fa fa-chevron-down"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div id="chat" class="panel-collapse collapse in">
+                    <div>
+                    <div class="portlet-body chat-widget" style=" width: auto; ">
+                        <div class="row" id='loading'>
+                            <div class="col-lg-12">
+                                <p class="text-center text-muted small"><h3 class="text-center">Loading Data .....</h3></p>
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                    <div class="portlet-footer">
+                        <form role="form">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Enter message..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" id="send" class="btn btn-default pull-right">Send</button>
+                                <div class="clearfix"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+</div>                
+<script src="asset/js/jq.js"></script>
+<script src="asset/js/bootstrap.js"></script><!-- 
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<script type="text/javascript">
+
+
+
+var isuview=0;
+$("#issue").hide();
+$('#btnissue').click(function(){
+
+if(isuview==0){
+$("#issue").show();
+
+isuview=1;
+}
+else{
+    $("#issue").hide();
+    isuview=0;
+}
+
+
+
+});
+
+
+
+var domain='http://kokikos.xyz/kobit/chat.php';
+// var domain="http://localhost/cch/chat.php";
+
+ var idclient;
+ // var datachat;
+// localStorage.setItem("idclient",1);
+
+
+
+
+
+if(localStorage.getItem("idclient")==null){
+    localStorage.setItem("idclient",0);
+}
+
+else if(localStorage.getItem("idclient")!=null){
+   console.log(localStorage.getItem("idclient"));
+}
+else{
+    localStorage.setItem("idclient",0);
+
+}
+if(localStorage.getItem("repochat")==null){
+
+    localStorage.setItem("repochat",'[]');
+}
+else if(localStorage.getItem("repochat")!=null){
+
+    console.log(localStorage.getItem("repochat"));
+}
+else{
+    localStorage.setItem("repochat",'[]');
+}
+
+
+
+idclient = localStorage.getItem('idclient');
+
+
+
+
+
+
+	setTimeout(function(){
+
+        $('#loading').remove();
+
+        var data=localStorage.getItem('repochat');
+        data=JSON.parse(data);
+
+        for(var i=0;i<data.length;i++){
+
+                var sender;
+                var img='<a class="pull-left" href="#"><img class="media-object img-circle" src="asset/img/sender.jpg" alt=""></a>';
+
+              
+                if(data[i].sender=="Pemerintah Pusat") {
+                   
+                    img='<a class="pull-left" href="#"><img class="media-object img-circle" src="asset/img/fphimti.jpg" alt=""></a>';
+                }
+                 var htmlpost='<div class="row"><div class="col-lg-12"><div class="media">'+img+'<div class="media-body"><h4 class="media-heading">'+data[i].sender+'<span class="small pull-right">'+data[i].time+'</span></h4><p>'+data[i].info+'</p></div></div></div></div> <hr>';
+               
+                
+
+                $('.portlet-body').append(htmlpost);
+
+        
+            }
+
+    },3000);
+
+    
+    function doget(){
+      $.post(domain,{target:'issue'},function(data){
+        $('#textissue').html(data[0].message);
+    })
+
+
+             
+        setTimeout(function(){
+
+           
+           
+            var datas={
+                id: parseInt(localStorage.getItem('idclient'))
+            }
+
+            // console.log('ping server '+parseInt(localStorage.getItem('idclient')));
+            var senddata={target:"get",data:
+                datas}
+           
+               $.post(domain,{target:"get",data:
+                datas},function(data){
+                
+
+                for(var i=0;i<data.length;i++){
+
+                var sender;
+                var img='<a class="pull-left" href="#"><img class="media-object img-circle" src="asset/img/sender.jpg" alt=""></a>';
+
+
+                if(data[i].sender=="Pemerintah Pusat"){
+                    
+                    img='<a class="pull-left" href="#"><img class="media-object img-circle" src="asset/img/fphimti.jpg" alt=""></a>';
+
+                }
+                 var htmlpost='<div class="row"><div class="col-lg-12"><div class="media">'+img+'<div class="media-body"><h4 class="media-heading">'+data[i].sender+'<span class="small pull-right">'+data[i].time+'</span></h4><p>'+data[i].info+'</p></div></div></div></div> <hr>';
+               
+                
+
+                  idclient=parseInt(data[i].ID);
+
+                  // console.log('data id '+ idclient);
+
+                $('.portlet-body').append(htmlpost);
+                 $(window).scrollTop($(".portlet-body").height());
+                 $('#soundFX').get(0).play();
+
+
+               
+
+            var datachat=localStorage.getItem("repochat");
+               datachat=JSON.parse(datachat);
+
+               if(datachat.length<10){
+                console.log('mausk');
+                datachat.push({sender:data[i].sender,info:data[i].info,time:data[i].time});
+
+               }
+               else{
+                datachat.shift();
+                datachat.push({sender:data[i].sender,info:data[i].info,time:data[i].time});
+               }
+
+               
+
+               localStorage.setItem('repochat',JSON.stringify(datachat));
+                }
+
+                localStorage.setItem("idclient",idclient);
+                
+                // console.log(localStorage.getItem('idclient')+ ' id balikan ');
+                
+
+            });
+
+            
+           
+        doget();
+        },3000);
+
+    }  
+
+    doget();
+                
+
+    $('#send').click(function(){
+        if($('textarea').val()!=""){
+            
+
+            var datas={
+            sender:localStorage.getItem('senderlocal'),
+            info:$('textarea').val()
+            }
+            console.log('masuk send ' +datas.sender+' '+datas.info);
+            $.post(domain,{target:'add',data:datas},function(data){
+
+                console.log('pesan ' + data.message);
+
+                if(data.message=='success'){
+
+                $('textarea').val('');
+            }
+   
+        
+            });
+        }
+
+    }); 
+
+ 
+
+</script>
+
+
+<div id="loginform" style=" position: fixed; width: 100%;height: 100%;  top:0;padding-top: 70px;">
+
+<div class="container">
+    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 "style="background-color: #fff;border-radius:10px; box-shadow: 1px 2px 20px #777; border-radius: 15px; padding-top: 10px; padding-bottom: 20px;">
+          <div class="form-group">
+          <h3>Login</h3>
+          <hr>
+        </div>
+
+        <div class="form-group">
+            <label>User Name</label>
+            <input class="form-control" id="un">
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="ps"class="form-control">
+        </div >
+        <div class="form-group">
+            
+        <button  id="sendlogin" class="btn btn-success col-md-6 col-md-offset-3">Login</button>
+        </div>
+
+    </div>     
+   
+        
+
+</div>
+
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
+    $('#sendlogin').click(function(){
+        
+        
+        if(($('#un').val()!=null)&&($('#ps').val()!=null)){
+        ; 
+
+        var datas={
+        ps:$('#ps').val(),
+        un:$('#un').val()
+     }
+
+        $.post(domain,{target:'addsender',data:datas},function(data){
+            console.log(data +'pesan server');
+            if(data.message=='success'){
+
+             localStorage.setItem('senderlocal',$('#un').val());
+             $('#loginform').remove();
+            }
+        })
+       
+
+
+        }
+
+
+
+    });
+
+
+if(localStorage.getItem('senderlocal')!=null){
+    console.log('hhh');
+
+    $('#loginform').remove();
+
+}
+
+
+  
+
+</script>
+</body>
+</html>
